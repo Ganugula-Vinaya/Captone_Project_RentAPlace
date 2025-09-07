@@ -1,0 +1,46 @@
+<div class="filters">
+  <mat-form-field appearance="outline">
+    <mat-label>City</mat-label>
+    <input matInput [(ngModel)]="city">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Country</mat-label>
+    <input matInput [(ngModel)]="country">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Property Type</mat-label>
+    <mat-select [(ngModel)]="propertyType">
+      <mat-option value="">Any</mat-option>
+      <mat-option value="Apartment">Apartment</mat-option>
+      <mat-option value="Villa">Villa</mat-option>
+      <mat-option value="House">House</mat-option>
+      <mat-option value="Flat">Flat</mat-option>
+      <mat-option value="Penthouse">PentHouse</mat-option>
+      <mat-option value="Bungalow">Bungalow</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Guests</mat-label>
+    <input type="number" min="1" matInput [(ngModel)]="guests">
+  </mat-form-field>
+
+  <button mat-flat-button color="primary" (click)="search()">Apply</button>
+</div>
+
+<div *ngIf="loading">Loading...</div>
+
+<div class="row g-4">
+  <div class="col-md-4" *ngFor="let p of items" (click)="view(p.id)">
+    <div class="card h-100 cursor-pointer">
+      <img *ngIf="p.images?.length" [src]="'http://localhost:5264' + p.images[0]" alt="cover" class="card-img-top property-image">
+      <div class="card-body">
+        <h5 class="card-title">{{ p.title }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ p.city }}, {{ p.country }}</h6>
+        <p class="card-text fw-bold">₹ {{ p.pricePerNight }} / night</p>
+      </div>
+    </div>
+  </div>
+</div>

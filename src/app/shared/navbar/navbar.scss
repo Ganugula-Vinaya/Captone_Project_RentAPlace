@@ -1,0 +1,93 @@
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 24px;
+  height: 64px;
+
+  background-color: #2f3237; /* Darker gray for elegance */
+  color: #ffffff;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 16px;
+  font-weight: 500;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4); /* subtle shadow */
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between logo and text */
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffeb3b; /* Yellow brand text */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.brand:hover {
+  color: #ffc107; /* brighter gold on hover */
+}
+
+.logo {
+  height: 36px;  /* Adjust size */
+  width: 36px;   /* Keep square ratio */
+  object-fit: contain; /* Avoid distortion */
+  border-radius: 6px;  /* Slightly rounded edges */
+  background-color: transparent; /* No background */
+}
+
+.spacer {
+  flex: 1;
+}
+
+a[mat-button],
+a[mat-stroked-button],
+a[mat-flat-button] {
+  color: #ffffff !important;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  margin-left: 16px;
+  text-transform: none;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+a[mat-button]:hover {
+  color: #ffcc80 !important; /* soft orange on hover */
+  text-decoration: underline; /* underline effect for links */
+}
+
+a[mat-stroked-button] {
+  border-radius: 25px;
+  padding: 6px 16px;
+  border-color: #bbbbbb !important;
+}
+
+a[mat-stroked-button]:hover {
+  background-color: #424242;
+  border-color: #ffffff !important;
+}
+
+a[mat-flat-button] {
+  border-radius: 25px;
+  padding: 6px 20px;
+  font-weight: 600;
+}
+
+.welcome {
+  margin-right: 16px;
+  font-size: 15px;
+  font-style: italic;
+  color: #ffffffdc;
+}
+
+.logout{
+  color: white;
+  background-color: #bbbbbb;
+}

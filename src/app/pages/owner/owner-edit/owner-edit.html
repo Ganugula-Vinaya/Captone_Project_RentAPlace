@@ -1,0 +1,52 @@
+<h2>Edit Property</h2>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input id="title" type="text" class="form-control" formControlName="title">
+  </div>
+
+  <div class="mb-3">
+    <label for="city" class="form-label">City</label>
+    <input id="city" type="text" class="form-control" formControlName="city">
+  </div>
+
+  <div class="mb-3">
+    <label for="country" class="form-label">Country</label>
+    <input id="country" type="text" class="form-control" formControlName="country">
+  </div>
+
+  <div class="mb-3">
+    <label for="pricePerNight" class="form-label">Price per Night</label>
+    <input id="pricePerNight" type="number" class="form-control" formControlName="pricePerNight">
+  </div>
+
+  <div class="mb-3">
+    <label for="propertyType" class="form-label">Property Type</label>
+    <select id="propertyType" class="form-select" formControlName="propertyType">
+      <option value="Apartment">Apartment</option>
+      <option value="Villa">Villa</option>
+      <option value="House">House</option>
+      <option value="Flat">Flat</option>
+      <option value="Penthouse">Penthouse</option>
+      <option value="Bungalow">Bungalow</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label for="maxGuests" class="form-label">Max Guests</label>
+    <input id="maxGuests" type="number" min="1" class="form-control" formControlName="maxGuests">
+  </div>
+
+  <div class="mb-3">
+    <label for="bedrooms" class="form-label">Bedrooms</label>
+    <input id="bedrooms" type="number" min="1" class="form-control" formControlName="bedrooms">
+  </div>
+
+  <div class="mb-3">
+    <label for="bathrooms" class="form-label">Bathrooms</label>
+    <input id="bathrooms" type="number" min="1" class="form-control" formControlName="bathrooms">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>

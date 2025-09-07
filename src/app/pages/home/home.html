@@ -1,0 +1,38 @@
+<div class="hero bg-light py-5 text-center" >
+  <h1 class="fw-bold mb-4">Plan Your Perfect Stay</h1>
+
+  <div class="card p-4 shadow-sm mx-auto" style="max-width: 1000px; border-radius: 12px;">
+    <div class="row g-3 align-items-end">
+
+      <!-- City -->
+      <div class="col-md-3">
+        <div class="form-floating">
+          <input type="text" class="form-control" id="city" placeholder="City" [(ngModel)]="city">
+          <label for="city">City</label>
+        </div>
+      </div>
+
+      <!-- Country -->
+      <div class="col-md-3">
+        <div class="form-floating">
+          <input type="text" class="form-control" id="country" placeholder="Country" [(ngModel)]="country">
+          <label for="country">Country</label>
+        </div>
+      </div>
+
+      <!-- Guests -->
+      <div class="col-md-3">
+        <div class="form-floating">
+          <input type="number" min="1" class="form-control" id="guests" placeholder="Guests" [(ngModel)]="guests">
+          <label for="guests">Guests</label>
+        </div>
+      </div>
+
+      <!-- Search Button -->
+      <div class="col-md-3 d-grid">
+        <button class="btn btn-primary btn-lg" (click)="search()">Search</button>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<mat-toolbar>
+  <div class="brand" routerLink="/">
+    <img src="logo.png"  class="logo" />
+    <span>RentAPlace</span>
+  </div>
+
+  <span class="spacer"></span>
+
+  <a mat-button routerLink="/properties">Explore</a>
+
+  <ng-container *ngIf="auth.role === 'Owner'; else renterLinks">
+    <a mat-button routerLink="/owner">Owner Dashboard</a>
+  </ng-container>
+  <ng-template #renterLinks></ng-template>
+
+  <ng-container *ngIf="(auth.currentUser$ | async) as u; else guest">
+    <span class="welcome">Hi, {{ u.fullName }}</span>
+    <button mat-stroked-button (click)="logout()" class="logout">Logout</button>
+  </ng-container>
+  <ng-template #guest>
+    <a mat-stroked-button routerLink="/login">Login</a>
+    <a mat-flat-button color="primary" routerLink="/register">Register</a>
+  </ng-template>
+</mat-toolbar>
